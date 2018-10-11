@@ -1,0 +1,29 @@
+body
+{
+    background-image: url("image/wall1.jpeg");
+}
+
+#main_text
+{
+    margin-top: 500px;
+    color: #fff;
+    font-size: 335%;
+}
+
+#input_name
+{
+    margin-top: 20px;
+    text-decoration: none;
+    background-color: transparent;
+    color: #fff;
+    font-size: 335%;
+    border: transparent;
+    border-bottom: 5px solid #fff;
+    text-align: center;
+}
+
+#input_name:focus
+{
+    background-color: transparent;
+    outline: 0;
+}
