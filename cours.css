@@ -68,6 +68,29 @@ body
     outline: 0;
 }
 
+#todo_sub_title
+{
+    margin-top: 100px;
+    display: none;
+    color: #fff;
+    font-size: 180%;
+}
+
+#todo_sub_text
+{
+    margin-top: 20px;
+    display: none;
+    color: #fff;
+    font-size: 200%;
+}
+
+#footer_quote
+{
+    margin-top: 50px;
+    color: #fff;
+    font-size: 20px;
+}
+
 
 
 

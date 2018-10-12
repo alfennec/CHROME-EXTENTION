@@ -11,9 +11,31 @@
         <script src="lib.min.js"></script>
 
         <script type="text/javascript">
+
+
             $(document).ready(function()
             {
                 var name;
+                var todo_day;
+
+                function am_pm()
+                {
+                    var dt = new Date();
+                    var atime = dt.getHours() + ":" + dt.getMinutes();
+
+                    var a = "12:00";
+                    var aDate = new Date(a).getTime();
+
+
+                    if(atime < a)
+                    {
+                        return "Good morning";
+                    }
+                    else
+                    {
+                        return "Good afternoon";
+                    }
+                }
 
                 $("#input_name").keypress(function(e)
                 {
@@ -22,14 +44,16 @@
                         name = $("#input_name").val();
                         $("#input_name").fadeOut();
 
-                        $("#main_sub_text").text("Good morning , "+name+" .");
+                        $("#main_sub_text").text(am_pm()+" , "+name+" .");
                         $("#main_sub_text").fadeIn();
 
                         var dt = new Date();
-                        var time = dt.getHours() + ":" + dt.getMinutes();
+                        var btime = dt.getHours() + ":" + dt.getMinutes();
 
-                        $("#main_text").text(time);
+                        $("#main_text").text(btime);
                         $("#main_text").css({"font-size": "1050%" , "margin-top" : "300px"});
+
+                        time_av();
 
                         $("#todo_title").fadeIn();
                         $("#todo_input").fadeIn();
@@ -39,15 +63,30 @@
                 });
 
 
-                $("#input_name").keypress(function(e)
+                $("#input_todo").keypress(function(e)
                 {
                     if(e.which == 13) 
                     {
-                        name = $("#input_name").val();
-                        $("#input_name").fadeOut(); 
+                        todo_day = $("#input_todo").val();
+                        $("#input_todo").fadeOut(); 
+                        $("#todo_title").fadeOut(); 
+                        
+
+                        $("#todo_sub_title").fadeIn();
+                        $("#todo_sub_text").text(todo_day);
+                        $("#todo_sub_text").fadeIn();
                     }
                     
                 });
+
+               function time_av() 
+               {
+                    var dt = new Date();
+                    var btime = dt.getHours() + ":" + dt.getMinutes();
+                    $("#main_text").text(btime);
+
+                    setInterval(function(){time_av()},1000);
+               }
 
             });
         </script>
@@ -59,13 +98,19 @@
             <div id="main_input"> 
                 <input type="text" name="name" id="input_name"/>
             </div>
-            <div id="main_sub_text"> 
-                
-            </div>
+            <div id="main_sub_text"></div>
 
             <div id="todo_title">What is your main focus for today?</div>
             <div id="todo_input"> 
                 <input type="text" name="name" id="input_todo"/>
+            </div>
+
+            <div id="todo_sub_title"> TODAY : </div>
+
+            <div id="todo_sub_text"></div>
+
+            <div id="footer_quote">
+                “One who knows all the answers has not been asked all the questions.”
             </div>
 
         </center>
