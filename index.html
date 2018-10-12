@@ -15,21 +15,40 @@
             {
                 var name;
 
-                $("#main_button").click(function()
+                $("#input_name").keypress(function(e)
                 {
-                    name = $("#input_name").val();
-                    $("#input_name").fadeOut();
+                    if(e.which == 13) 
+                    {
+                        name = $("#input_name").val();
+                        $("#input_name").fadeOut();
 
-                    $("#main_sub_text").text("Good morning , "+name+" .");
-                    $("#main_sub_text").fadeIn();
+                        $("#main_sub_text").text("Good morning , "+name+" .");
+                        $("#main_sub_text").fadeIn();
 
-                    var dt = new Date();
-                    var time = dt.getHours() + ":" + dt.getMinutes();
+                        var dt = new Date();
+                        var time = dt.getHours() + ":" + dt.getMinutes();
 
-                    $("#main_text").text(time);
-                    $("#main_text").css({"font-size": "1050%" , "margin-top" : "300px"});
+                        $("#main_text").text(time);
+                        $("#main_text").css({"font-size": "1050%" , "margin-top" : "300px"});
 
+                        $("#todo_title").fadeIn();
+                        $("#todo_input").fadeIn();
+                       
+                    }
+                    
                 });
+
+
+                $("#input_name").keypress(function(e)
+                {
+                    if(e.which == 13) 
+                    {
+                        name = $("#input_name").val();
+                        $("#input_name").fadeOut(); 
+                    }
+                    
+                });
+
             });
         </script>
         
@@ -43,7 +62,11 @@
             <div id="main_sub_text"> 
                 
             </div>
-            <div id="main_button"> Valider </div>
+
+            <div id="todo_title">What is your main focus for today?</div>
+            <div id="todo_input"> 
+                <input type="text" name="name" id="input_todo"/>
+            </div>
 
         </center>
     </body>
