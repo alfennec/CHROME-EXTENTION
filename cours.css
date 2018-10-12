@@ -5,7 +5,15 @@ body
 
 #main_text
 {
-    margin-top: 500px;
+    margin-top: 400px;
+    color: #fff;
+    font-size: 335%;
+}
+
+#main_sub_text
+{
+    margin-top: 20px;
+    display: none;
     color: #fff;
     font-size: 335%;
 }
@@ -27,3 +35,17 @@ body
     background-color: transparent;
     outline: 0;
 }
+
+#main_button
+{
+    margin-top: 20px;
+    border: 5px solid #fff;
+    color: #fff;
+    font-size: 335%;
+    width: 200px;
+    cursor: pointer;
+}
+
+
+
+

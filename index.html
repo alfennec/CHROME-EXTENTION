@@ -8,10 +8,29 @@
         <meta name="description" content="Création des autres pages de notre site personnel en HTML et CSS.">
         <link rel='stylesheet' href='cours.css'>
 
-        <script src="script.js"></script>
+        <script src="lib.min.js"></script>
 
         <script type="text/javascript">
+            $(document).ready(function()
+            {
+                var name;
 
+                $("#main_button").click(function()
+                {
+                    name = $("#input_name").val();
+                    $("#input_name").fadeOut();
+
+                    $("#main_sub_text").text("Good morning , "+name+" .");
+                    $("#main_sub_text").fadeIn();
+
+                    var dt = new Date();
+                    var time = dt.getHours() + ":" + dt.getMinutes();
+
+                    $("#main_text").text(time);
+                    $("#main_text").css({"font-size": "1050%" , "margin-top" : "300px"});
+
+                });
+            });
         </script>
         
     </head>
@@ -21,6 +40,10 @@
             <div id="main_input"> 
                 <input type="text" name="name" id="input_name"/>
             </div>
+            <div id="main_sub_text"> 
+                
+            </div>
+            <div id="main_button"> Valider </div>
 
         </center>
     </body>
